@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/c/sandboxes/ic-azure-infrastructure/resources/000_python-base/infrastructure-lib'
+let g:netrw_dirhist_2='/c/sandboxes/ic-azure-infrastructure/resources/000_python-base/infrastructure-lib/infrastructure'
+let g:netrw_dirhist_3='/c/sandboxes/ic-azure-infrastructure/resources/000_python-base/infrastructure-lib/infrastructure/base'
+let g:netrw_dirhist_4='/c/sandboxes/ic-azure-infrastructure/resources/004_hd-insight'
+let g:netrw_dirhist_5='/c/sandboxes/mattermost-docker/contrib/aws/app/mattermost/config'
