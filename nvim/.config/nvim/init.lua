@@ -475,11 +475,17 @@ require('lazy').setup({
         gopls = {},
         terraformls = {},
         templ = {},
-        tailwindcss = {},
-        htmx = {},
+        tailwindcss = {
+          filetypes = { "html", "templ" }
+        },
+        htmx = {
+          filetypes = { "html", "templ" }
+        },
         tsserver = {},
         svelte = {},
-        emmet_language_server = {},
+        emmet_language_server = {
+          filetypes = { "html", "templ" }
+        },
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
