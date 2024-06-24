@@ -22,7 +22,7 @@ snippet sw "switch"
 		${0}
 	}
 
-snippet ps "fmt.Sprintf"
+snippet sp "fmt.Sprintf"
 	fmt.Sprintf("%${1:s}", ${2:var})
 
 snippet errwr "Error handling with fmt.Errorf"
@@ -34,3 +34,11 @@ snippet ife "Error handling return error"
 	if err != nil {
 		return err${1}
 	}
+
+snippet if "if condition"
+	if $1 {
+		${2:${VISUAL}}
+	}
+
+snippet ap "append"
+	append(${1:slice}, ${0:value})
