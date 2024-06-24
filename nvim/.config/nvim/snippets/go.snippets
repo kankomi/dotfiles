@@ -4,7 +4,10 @@ snippet im "import"
 	)
 
 snippet pl "fmt.Println()"
-	fmt.Println("${1:s}")
+	fmt.Println(${1:s})
+
+snippet pe "fmt.Fprintln()"
+	fmt.Fprintln(os.Stderr, ${1:err})
 
 snippet st "struct"
 	type ${1:name} struct {
