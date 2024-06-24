@@ -284,7 +284,13 @@ require('lazy').setup({
         -- },
         -- pickers = {}
         defaults = {
-          file_ignore_patterns = { "node%_modules/.*" },
+          file_ignore_patterns = {
+            "node%_modules/.*",
+            ".*.woff2",
+            ".*.jpg",
+            ".*.ico",
+            ".*/bin/.*",
+          },
         },
         extensions = {
           ['ui-select'] = {
