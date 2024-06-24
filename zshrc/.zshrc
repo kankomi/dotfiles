@@ -101,8 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v=nvim
 alias lg=lazygit
+alias tm=tmux
 
-export PATH=$PATH:/home/grop/.bin:/opt/nvim/bin:/home/grop/go/bin
+export PATH=$PATH:/home/grop/.bin:/opt/nvim/bin:/home/grop/go/bin:/home/grop/.cargo/bin
 
 eval "$(oh-my-posh init zsh --config ~/.config/posh-themes/catppuccin_mocha.omp.json)"
 source /usr/share/nvm/init-nvm.sh
