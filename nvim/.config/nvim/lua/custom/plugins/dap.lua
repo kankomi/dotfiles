@@ -14,18 +14,21 @@ return {
       command = 'node',
       args = { vim.fn.stdpath 'data' .. '/mason/bin/go-debug-adapter' },
     }
-    dap.configurations.go = {
-      {
+
+    require('dap-go').setup({
+      dap_configrations = { {
         type = 'go',
         name = 'Debug',
         request = 'launch',
-        showLog = false,
-        program = '${file}',
+        showLog = true,
+        program = '${workspaceFolder}/main.go',
         dlvToolPath = vim.fn.exepath 'dlv', -- Adjust to where delve is installed
       },
-    }
-
-    require('dap-go').setup()
+      },
+      delve = {
+        build_flags = "-tags prod",
+      }
+    })
     require('nvim-dap-virtual-text').setup {}
     vim.g.dap_virtual_text = true
 
