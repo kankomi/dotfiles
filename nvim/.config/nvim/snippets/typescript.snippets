@@ -1,3 +1,13 @@
 snippet clg "console.log"
 	console.log(${1:s})
 
+snippet prom "promise"
+	new Promise((resolve, reject) => {
+		${0}
+	})
+
+snippet map "map"
+	${1:arr}.map((${2:val}, ${3:idx}) => {
+		${0}
+	})
+
