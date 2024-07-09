@@ -10,6 +10,7 @@ vim.keymap.set('v', '<leader>y', '<C-">+y', { desc = 'Yank to clipboard', silent
 vim.keymap.set('n', '<leader>p', '<C-">*p', { desc = 'Paste from clipboard', silent = true })
 vim.keymap.set('n', '<M-j>', '<cmd>cnext<cr>', { desc = 'CNext', silent = true })
 vim.keymap.set('n', '<M-k>', '<cmd>cprevious<cr>', { desc = 'CPrev', silent = true })
+vim.keymap.set('n', '<M-t>', '<C-]>', { desc = 'Goto Tag', silent = true })
 
 -- Conform
 vim.keymap.set('n', '<leader>fm', function()
