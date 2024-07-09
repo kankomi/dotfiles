@@ -3,7 +3,7 @@ return {
   config = function()
     require("symbols-outline").setup()
   end,
-  keys = {
-    { '<C-m>', '<cmd>SymbolsOutline<cr>', desc = 'Open Symbol Panel' },
-  },
+  -- keys = {
+  --   { '<C-m>', '<cmd>SymbolsOutline<cr>', desc = 'Open Symbol Panel' },
+  -- },
 }
