@@ -45,3 +45,10 @@ snippet if "if condition"
 
 snippet ap "append"
 	append(${1:slice}, ${0:value})
+
+snippet hand "HandleFunc"
+	func Handle${1:Func}(w http.ResponseWriter, r *http.Request) error {
+		${0}
+		return nil
+	}
+
