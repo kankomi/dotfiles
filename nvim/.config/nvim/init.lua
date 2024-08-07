@@ -482,13 +482,13 @@ require('lazy').setup({
         terraformls = {},
         templ = {},
         tailwindcss = {
-          filetypes = { "html", "templ" }
+          filetypes = { "html", "templ", "css" }
         },
         htmx = {
           filetypes = { "html", "templ" }
         },
         tsserver = {},
-        svelte = {},
+        -- svelte = {},
         emmet_language_server = {
           filetypes = { "html", "templ" }
         },
@@ -749,7 +749,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
