@@ -24,6 +24,10 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
+if vim.g.neovide then
+  vim.o.guifont = "Fira Code:h12"
+end
+
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
@@ -479,7 +483,7 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         gopls = {},
-        terraformls = {},
+        terraformls = { "tf" },
         templ = {},
         tailwindcss = {
           filetypes = { "html", "templ", "css" }
@@ -561,7 +565,7 @@ require('lazy').setup({
         -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
         return {
-          timeout_ms = 500,
+          timeout_ms = 2000,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
@@ -576,7 +580,8 @@ require('lazy').setup({
         json = { 'prettier' },
         css = { 'prettier' },
         yaml = { 'prettier' },
-        templ = { 'templ fmt' },
+        templ = { 'templ' },
+        terraform = { 'terraform_fmt' },
       },
     },
   },
