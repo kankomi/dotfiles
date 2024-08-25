@@ -11,6 +11,7 @@ vim.keymap.set('n', '<leader>p', '<C-">*p', { desc = 'Paste from clipboard', sil
 vim.keymap.set('n', '<M-j>', '<cmd>cnext<cr>', { desc = 'CNext', silent = true })
 vim.keymap.set('n', '<M-k>', '<cmd>cprevious<cr>', { desc = 'CPrev', silent = true })
 vim.keymap.set('n', '<M-t>', '<C-]>', { desc = 'Goto Tag', silent = true })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'exit terminal', silent = true })
 
 -- Conform
 vim.keymap.set('n', '<leader>fm', function()
