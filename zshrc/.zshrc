@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fast-syntax-highlighting)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,8 +102,28 @@ source $ZSH/oh-my-zsh.sh
 alias v=nvim
 alias lg=lazygit
 alias tm=tmux
+alias reload="source ~/.zshrc"
+alias oo="cd ~/vaults/work"
+alias vc="cd ~/dotfiles/nvim/.config/nvim && nvim"
 
-export PATH=$PATH:/home/grop/.bin:/opt/nvim/bin:/home/grop/go/bin:/home/grop/.cargo/bin
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+# export PATH=$GOPATH:$GOROOT/bin:$PATH
 
-eval "$(oh-my-posh init zsh --config ~/.config/posh-themes/catppuccin_mocha.omp.json)"
-source /usr/share/nvm/init-nvm.sh
+export PATH=$HOME/.bin:/opt/nvim/bin:$HOME/go/bin:$GOPATH:$GOROOT/bin:$HOME/.cargo/bin:$PATH
+export http_proxy=http://localhost:3129
+export https_proxy=http://localhost:3129
+export HTTP_PROXY=http://localhost:3129
+export HTTPS_PROXY=http://localhost:3129
+export NO_PROXY=localhost,*bosch.com,127.0.0.1
+
+#eval "$(oh-my-posh init zsh --config ~/.config/posh-themes/catppuccin_mocha.omp.json)"
+# source /usr/share/nvm/init-nvm.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
