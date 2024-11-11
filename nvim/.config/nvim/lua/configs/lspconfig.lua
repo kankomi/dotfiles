@@ -16,7 +16,7 @@ local servers = {
     filetypes = { "html", "templ" },
   },
   ts_ls = {},
-  -- svelte = {},
+  svelte = {},
   emmet_language_server = {
     filetypes = { "html", "templ" },
   },
