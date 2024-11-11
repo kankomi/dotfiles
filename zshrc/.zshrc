@@ -110,12 +110,12 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 # export PATH=$GOPATH:$GOROOT/bin:$PATH
 
-export PATH=$HOME/.bin:/opt/nvim/bin:$HOME/go/bin:$GOPATH:$GOROOT/bin:$HOME/.cargo/bin:$PATH
-export http_proxy=http://localhost:3129
-export https_proxy=http://localhost:3129
-export HTTP_PROXY=http://localhost:3129
-export HTTPS_PROXY=http://localhost:3129
-export NO_PROXY=localhost,*bosch.com,127.0.0.1
+export PATH=$HOME/.bin:/usr/local/nvim/bin:$HOME/go/bin:$GOPATH:$GOROOT/bin:$HOME/.cargo/bin:$PATH
+#export http_proxy=http://localhost:3129
+#export https_proxy=http://localhost:3129
+#export HTTP_PROXY=http://localhost:3129
+#export HTTPS_PROXY=http://localhost:3129
+#export NO_PROXY=localhost,*bosch.com,127.0.0.1
 
 #eval "$(oh-my-posh init zsh --config ~/.config/posh-themes/catppuccin_mocha.omp.json)"
 # source /usr/share/nvm/init-nvm.sh
