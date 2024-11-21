@@ -7,6 +7,7 @@ local options = {
     typescript = { "prettier" },
     json = { "prettier" },
     yaml = { "prettier" },
+    markdown = { "prettier" },
     templ = { "templ" },
     terraform = { "terraform_fmt" },
     go = { "gofmt", "goimports" },
