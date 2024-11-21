@@ -10,7 +10,7 @@ local servers = {
   terraformls = { "tf" },
   templ = {},
   tailwindcss = {
-    filetypes = { "html", "templ", "css" },
+    filetypes = { "html", "templ", "css", "rs" },
   },
   htmx = {
     filetypes = { "html", "templ" },
@@ -18,20 +18,32 @@ local servers = {
   ts_ls = {},
   svelte = {},
   emmet_language_server = {
-    filetypes = { "html", "templ" },
+    filetypes = { "html", "templ", "rs" },
   },
   pyright = {},
-  rust_analyzer = {
-    filetypes = { "rust" },
-    root_dir = util.root_pattern "Cargo.toml",
-    settings = {
-      ["rust_analyzer"] = {
-        cargo = {
-          allFeatures = true,
-        },
-      },
-    },
-  },
+  -- rust_analyzer = {
+  --   filetypes = { "rust" },
+  --   root_dir = util.root_pattern "Cargo.toml",
+  --   settings = {
+  --     ["rust_analyzer"] = {
+  --       cargo = {
+  --         allFeatures = true,
+  --       },
+  --       checkOnSave = {
+  --         features = { "ssr" },
+  --         command = "clippy",
+  --       },
+  --     },
+  --     procMacro = {
+  --       ignored = {
+  --         leptos_macro = {
+  --           -- "component",
+  --           "server",
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
   lua_ls = {
     settings = {
       Lua = {
@@ -50,6 +62,16 @@ for name, opts in pairs(servers) do
   opts.capabilities = nvlsp.capabilities
 
   require("lspconfig")[name].setup(opts)
+end
+
+for _, method in ipairs { "textDocument/diagnostic", "workspace/diagnostic" } do
+  local default_diagnostic_handler = vim.lsp.handlers[method]
+  vim.lsp.handlers[method] = function(err, result, context, config)
+    if err ~= nil and err.code == -32802 then
+      return
+    end
+    return default_diagnostic_handler(err, result, context, config)
+  end
 end
 
 -- configuring single server, example: typescript
